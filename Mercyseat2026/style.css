@@ -1,0 +1,332 @@
+/* ============================================================
+   TABLE DES MATIÈRES :
+   1. Paramètres Généraux
+   2. Header & Logo
+   3. Menu de Navigation
+   4. Slider d'images
+   5. Contenu & Cartes (Layout)
+   6. Éléments Médias (Vidéo/Audio)
+   7. Formulaire & Boutons
+   8. Sections Spécifiques (PDF, Galerie)
+   9. Pied de page (Footer)
+   10. Widgets (WhatsApp)
+   11. Animations & Responsive
+   ============================================================ */
+
+
+/* 1. PARAMÈTRES GÉNÉRAUX */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #070706f8;
+    color: white;
+}
+
+
+/* 2. HEADER & LOGO */
+
+header {
+    height: 230px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(34, 139, 165, 0.6) 0.6), rgba(0, 0, 0, 0.6)), url("img/photo-entete.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-title {
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+/* 3. MENU DE NAVIGATION */
+
+nav {
+    background: #111;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+
+/* 4. SLIDER D'IMAGES */
+
+.slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.slide {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease;
+    animation: slideShow 12s infinite;
+}
+
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 8s;
+}
+
+
+/* 5. CONTENU & CARTES (LAYOUT) */
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1c1c1c;
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    animation: fadeUp 1s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+/* 6. ÉLÉMENTS MÉDIAS */
+
+video {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* ================= DÎMES & OFFRANDES ================= */
+
+.donation {
+    margin-top: 15px;
+    padding: 12px;
+    background: #151515;
+    border-radius: 8px;
+    border-left: 4px solid #e50914;
+}
+
+.donation p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.card em {
+    display: block;
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 13px;
+    font-style: italic;
+}
+
+
+/* 7. FORMULAIRE & BOUTONS */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+    font-family: inherit;
+}
+
+form button {
+    background-color: #e50914;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #b20710;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #b20710;
+}
+
+
+/* 8. SECTIONS SPÉCIFIQUES (PDF, GALERIE) */
+
+.pdf-item {
+    margin-top: 15px;
+    padding: 12px;
+    border-top: 1px solid #333;
+}
+
+.pdf-item:first-child {
+    border-top: none;
+}
+
+.pdf-item p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.gallery img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+
+/* 9. PIED DE PAGE (FOOTER) */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+
+/* 10. WIDGETS (WHATSAPP) */
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.whatsapp:hover {
+    background: #1ebe5d;
+}
+
+
+/* 11. ANIMATIONS & RESPONSIVE */
+
+@keyframes slideShow {
+    0%,
+    25% {
+        opacity: 1;
+    }
+    33%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    .card {
+        width: 100%;
+    }
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+    .slider,
+    .slide {
+        height: 200px;
+    }
+    header {
+        height: 180px;
+        padding: 10px;
+    }
+}
