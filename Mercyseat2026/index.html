@@ -3,243 +3,416 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mercy Seat Parish | The Redeemed Christian Church of God</title>
-
+<meta name="description" content="Mercy Seat Parish - RCCG Nkomo Yaoundé. Cultes, prières, dîmes et offrandes en ligne.">
+<meta name="theme-color" content="#0f172a">
+<title>Mercy Seat Parish | RCCG — Paiement en Ligne</title>
 <link rel="icon" type="image/png" href="img/images.png">
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<!-- ================== HEADER ================== -->
 <header>
-<h1>
-<img src="img/rccg.png" alt="Logo" class="logo-title">
-Mercy Seat Parish {The Redeemed Christian Church of God}
-</h1>
+  <h1>
+    <img src="img/rccg.png" alt="Logo RCCG" class="logo-title">
+    Mercy Seat Parish <span style="font-weight:400; opacity:0.7; color: var(--text-secondary);">{The Redeemed Christian Church of God}</span>
+  </h1>
 </header>
 
-<!-- ================== MENU ================== -->
 <nav>
-<a href="#">Accueil</a>
-<a href="#">Livres</a>
-<a href="#">Vidéos</a>
-<a href="#">Galerie</a>
-<a href="#">Contact</a>
-<a href="#don">Dîmes</a>
+  <a href="#accueil">Accueil</a>
+  <a href="#livres">Livres</a>
+  <a href="#videos">Vidéos</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#contact">Contact</a>
+  <a href="#don">Dîmes & Offrandes</a>
 </nav>
 
-<!-- ================== SLIDER ================== -->
-<div class="slider">
-
-<img src="img/" class="slide">
-<img src="img/ic1.jpg" class="slide">
-<img src="img/images1.jpg" class="slide">
-
+<div class="slider" id="accueil">
+  <img src="img/slide1.jpg" class="slide active" alt="Culte">
+  <img src="img/ic1.jpg" class="slide" alt="Événement">
+  <img src="img/images1.jpg" class="slide" alt="Communauté">
+  
+  <div class="slider-overlay">
+    <h2>✨ Bienvenue à Mercy Seat Parish</h2>
+    <p>"Absolutely Holiness shall be our lifestyle"</p>
+  </div>
 </div>
 
-<!-- ================== CONTENU ================== -->
 <section class="container">
 
-<!-- ================== LIVRES ================== -->
-<div class="card">
+  <!-- LIVRES -->
+  <div class="card" id="livres">
+    <h2>📚 Livres PDF</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Téléchargez vos ressources spirituelles :</p>
 
-<h2>Livres PDF</h2>
-<p>Téléchargez vos livres ici :</p>
+    <div class="pdf-item">
+      <p>📘 Manuel de l'école du dimanche</p>
+      <a href="media/livre1.pdf" download class="btn">Télécharger</a>
+    </div>
+    <div class="pdf-item">
+      <p>📗 Livre les portes ouvertes</p>
+      <a href="media/livre2.pdf" download class="btn">Télécharger</a>
+    </div>
+    <div class="pdf-item">
+      <p>📙 Enseignement biblique</p>
+      <a href="media/livre3.pdf" download class="btn">Télécharger</a>
+    </div>
+  </div>
 
-<div class="pdf-item">
-<p>📘 Manuel de l'école du dimanche</p>
-<a href="media/livre1.pdf" download class="btn">Télécharger</a>
-</div>
+  <!-- VIDÉOS -->
+  <div class="card" id="videos">
+    <h2>🎥 École du dimanche</h2>
+    <video controls poster="img/poster1.jpg">
+      <source src="media/video1.mp4" type="video/mp4">
+    </video>
+  </div>
 
-<div class="pdf-item">
-<p>📗 Livre les portes ouvertes</p>
-<a href="media/livre2.pdf" download class="btn">Télécharger</a>
-</div>
+  <div class="card">
+    <h2>🎵 Adoration & Louange</h2>
+    <video controls poster="img/poster2.jpg">
+      <source src="media/video2.mp4" type="video/mp4">
+    </video>
+  </div>
 
-<div class="pdf-item">
-<p>📙 Enseignement biblique</p>
-<a href="media/livre3.pdf" download class="btn">Télécharger</a>
-</div>
+  <div class="card">
+    <h2>📖 Culte du dimanche</h2>
+    <video controls poster="img/poster3.jpg">
+      <source src="media/video3.mp4" type="video/mp4">
+    </video>
+  </div>
 
-</div>
+  <!-- YOUTUBE -->
+  <div class="card">
+    <h2>📺 Dernières Prédications</h2>
+    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCXXXXXXXXXXXX" 
+      height="250" allowfullscreen loading="lazy" title="YouTube"></iframe>
+  </div>
 
-<!-- ================== VIDEO ECOLE DIMANCHE ================== -->
-<div class="card">
+  <div class="card">
+    <h2>🔴 Culte en Direct LIVE</h2>
+    <iframe src="https://www.youtube.com/embed/live_stream?channel=UCXXXXXXXXXXXX" 
+      height="250" allowfullscreen loading="lazy" title="Live"></iframe>
+  </div>
 
-<h2>Ecole du dimanche | Sunday school</h2>
+  <!-- ============================================
+       SECTION DÎMES — FORMULAIRE DE PAIEMENT INTÉGRÉ
+       ============================================ -->
+  <div class="card" id="don">
+    <h2>💰 Dîmes | Offrandes | Actions de Grâces</h2>
+    <p style="color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem;">
+      Soutenez l'œuvre de Dieu à Mercy Seat Parish.<br>
+      Choisissez votre méthode de paiement ci-dessous.
+    </p>
 
-<video controls>
-<source src="media/video1.mp4" type="video/mp4">
-Votre navigateur ne supporte pas la vidéo.
-</video>
+    <!-- Bouton pour ouvrir le formulaire -->
+    <button class="btn btn-gold btn-large" onclick="openPaymentModal()">
+      💳 Faire un don maintenant
+    </button>
 
-</div>
+    <em style="display: block; text-align: center; margin-top: 1.5rem; padding: 1rem; background: rgba(251,191,36,0.05); border-radius: 12px; border: 1px solid rgba(251,191,36,0.2); color: var(--accent-gold); font-style: italic;">
+      "Apportez toutes les dîmes à la maison du trésor..."<br>— Malachie 3:10
+    </em>
+  </div>
 
-<!-- ================== LOUANGE ================== -->
-<div class="card">
+  <!-- FORMULAIRE PRIÈRE -->
+  <div class="card">
+    <h2>🙏 Formulaire de Prière</h2>
+    <form action="#" method="POST">
+      <input type="text" name="nom" placeholder="Votre nom complet" required>
+      <input type="email" name="email" placeholder="Votre adresse email" required>
+      <textarea name="priere" placeholder="Écrivez votre prière ici..." required></textarea>
+      <button type="submit" class="btn">Envoyer ma prière</button>
+    </form>
+  </div>
 
-<h2>Adoration | Louange | Ministration</h2>
+  <!-- GALERIE -->
+  <div class="card" id="galerie">
+    <h2>📸 Meilleurs Souvenirs</h2>
+    <div class="gallery">
+      <img src="img/images1.jpg" alt="Souvenir 1" loading="lazy">
+      <img src="img/ic4.jpg" alt="Souvenir 2" loading="lazy">
+      <img src="img/souvenir3.jpg" alt="Souvenir 3" loading="lazy">
+    </div>
+  </div>
 
-<video controls>
-<source src="media/video2.mp4" type="video/mp4">
-Votre navigateur ne supporte pas la vidéo.
-</video>
-
-</div>
-
-<!-- ================== CULTE ================== -->
-<div class="card">
-
-<h2>Culte du dimanche | Sunday preaching</h2>
-
-<video controls>
-<source src="media/video3.mp4" type="video/mp4">
-Votre navigateur ne supporte pas la vidéo.
-</video>
-
-</div>
-
-
-
-
-<!-- ================== DERNIERES VIDEOS YOUTUBE ================== -->
-<div class="card">
-
-<h2>Dernières Prédications | YouTube</h2>
-
-<iframe
-width="100%"
-height="250"
-src="https://www.youtube.com/embed?listType=user_uploads&list=UCXXXXXXXXXXXX"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</div>
-
-<!-- ================== LIVE YOUTUBE ================== -->
-<div class="card">
-
-<h2>Diffusion LIVE | Culte en direct</h2>
-
-<iframe
-width="100%"
-height="250"
-src="https://www.youtube.com/embed/live_stream?channel=UCXXXXXXXXXXXX"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</div>
-
-<!-- ================== DÎMES ================== -->
-<div class="card" id="don">
-
-<h2>Dîmes | Offrandes | Actions de grâces</h2>
-
-<p>
-Soutenez l'œuvre de Dieu à Mercy Seat Parish.
-Vous pouvez envoyer vos dîmes et offrandes via :
-</p>
-
-<div class="donation">
-<p><strong>Mobile Money :</strong> +237 690 45 97 12</p>
-<p><strong>Nom :</strong> RCCG Mercy Seat Parish</p>
-</div>
-
-<div class="donation">
-<p><strong>Orange Money :</strong> +237 671 24 62 33</p>
-<p><strong>Nom :</strong> RCCG Mercy Seat Parish</p>
-</div>
-
-<p><em>"Apportez toutes les dîmes à la maison du trésor..." Malachie 3:10</em></p>
-
-<a href="https://wa.me/237690459712" class="btn">
-Envoyer une preuve de paiement
-</a>
-
-</div>
-
-<!-- ================== FORMULAIRE PRIERE ================== -->
-<div class="card">
-
-<h2>Formulaire de prière</h2>
-
-<form>
-
-<input type="text" name="nom" placeholder="Votre nom" required>
-
-<input type="email" name="email" placeholder="Votre email" required>
-
-<textarea name="priere" placeholder="Votre prière" required></textarea>
-
-<button type="submit" class="btn">Envoyer</button>
-
-</form>
-
-</div>
-
-<!-- ================== GALERIE ================== -->
-<div class="card">
-
-<h2>Meilleurs souvenirs</h2>
-
-<div class="gallery">
-
-<img src="imgs/images1.jpg">
-<img src="imgs/ic4.jpg">
-<img src="img/souvenir3.jpg">
-
-</div>
-
-</div>
-
-<!-- ================== LOCALISATION ================== -->
-<div class="card">
-
-<h2>Localisation de l'église</h2>
-
-<iframe
-src="https://www.google.com/maps?q=nkomo+yaounde&output=embed"
-width="100%"
-height="250"
-style="border:0;">
-</iframe>
-
-</div>
+  <!-- LOCALISATION -->
+  <div class="card" id="contact">
+    <h2>📍 Notre Localisation</h2>
+    <iframe src="https://www.google.com/maps?q=nkomo+yaounde&output=embed" 
+      height="250" style="border:0; border-radius:12px;" allowfullscreen loading="lazy"></iframe>
+  </div>
 
 </section>
 
-<!-- ================== FOOTER ================== -->
 <footer>
-
-<p>© 2026 Mercy Seat Parish</p>
-
-<p>
-Contact : +237 690459712 / 671246233<br>
-Email : rccgnkomomsp@gmail.com
-</p>
-
-<p>
-Facebook : RCCG Mercy Seat Nkomo
-</p>
-
-<p>
-Notre chaîne YouTube :
-<a href="https://youtube.com/@nomdelachaine" target="_blank" class="btn">
-Voir notre chaîne
-</a>
-</p>
-
+  <p><strong style="color: var(--accent-gold);">© 2026 Mercy Seat Parish</strong></p>
+  <p>📞 +237 690 45 97 12 / 671 24 62 33</p>
+  <p>✉️ rccgnkomomsp@gmail.com</p>
+  <p>📘 <a href="https://facebook.com/RCCGMercySeatNkomo">RCCG Mercy Seat Nkomo</a></p>
+  <a href="https://youtube.com/@nomdelachaine" target="_blank" class="btn btn-gold">▶️ Notre Chaîne YouTube</a>
 </footer>
 
-<!-- ================== WHATSAPP ================== -->
-<a href="https://wa.me/237690459712" class="whatsapp">
-WhatsApp
-</a>
+<a href="https://wa.me/237690459712" class="whatsapp" target="_blank">💬 WhatsApp</a>
+
+<!-- ============================================
+     MODAL DE PAIEMENT — FORMULAIRE COMPLET
+     ============================================ -->
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closePaymentModal()">✕</button>
+    
+    <div class="modal-header">
+      <h2>💰 Faire un Don</h2>
+      <p style="color: var(--text-secondary);">Merci pour votre générosité envers l'œuvre de Dieu</p>
+    </div>
+
+    <form id="paymentForm" onsubmit="handlePayment(event)">
+      
+      <!-- Type de don -->
+      <div class="form-group">
+        <label>Type de don</label>
+        <div class="donation-types">
+          <label class="donation-type">
+            <input type="radio" name="typeDon" value="dime" checked>
+            <span>📖 Dîmes (10%)</span>
+          </label>
+          <label class="donation-type">
+            <input type="radio" name="typeDon" value="offrande">
+            <span>🎁 Offrande</span>
+          </label>
+          <label class="donation-type">
+            <input type="radio" name="typeDon" value="actionGrace">
+            <span>🙏 Action de Grâce</span>
+          </label>
+          <label class="donation-type">
+            <input type="radio" name="typeDon" value="projet">
+            <span>🏗️ Projet Spécial</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Montant -->
+      <div class="form-group">
+        <label for="montant">Montant (FCFA)</label>
+        <div class="amount-input">
+          <input type="number" id="montant" name="montant" placeholder="Ex: 5000" min="100" required>
+          <span class="currency">FCFA</span>
+        </div>
+      </div>
+
+      <!-- Montants rapides -->
+      <div class="quick-amounts">
+        <button type="button" class="quick-btn" onclick="setAmount(1000)">1 000</button>
+        <button type="button" class="quick-btn" onclick="setAmount(5000)">5 000</button>
+        <button type="button" class="quick-btn" onclick="setAmount(10000)">10 000</button>
+        <button type="button" class="quick-btn" onclick="setAmount(50000)">50 000</button>
+      </div>
+
+      <!-- Méthode de paiement -->
+      <div class="form-group">
+        <label>Méthode de paiement</label>
+        <div class="payment-methods">
+          <label class="payment-method">
+            <input type="radio" name="methode" value="momo" checked>
+            <div class="method-card">
+              <span class="method-icon">📱</span>
+              <div>
+                <strong>Mobile Money</strong>
+                <small>MTN</small>
+              </div>
+            </div>
+          </label>
+          <label class="payment-method">
+            <input type="radio" name="methode" value="om">
+            <div class="method-card">
+              <span class="method-icon">📱</span>
+              <div>
+                <strong>Orange Money</strong>
+                <small>Orange</small>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Informations du donateur -->
+      <div class="form-group">
+        <label for="nomDonateur">Votre nom complet</label>
+        <input type="text" id="nomDonateur" name="nomDonateur" placeholder="Ex: Jean Dupont" required>
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Numéro de téléphone</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="Ex: 690 45 97 12" required>
+      </div>
+
+      <div class="form-group">
+        <label for="emailDonateur">Email (optionnel)</label>
+        <input type="email" id="emailDonateur" name="emailDonateur" placeholder="Ex: email@exemple.com">
+      </div>
+
+      <!-- Message de motivation -->
+      <div class="motivation-box">
+        <p>📖 <strong>Malachie 3:10</strong></p>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
+          "Apportez toutes les dîmes à la maison du trésor... et vous verrez si je n'ouvre pas pour vous les écluses des cieux."
+        </p>
+      </div>
+
+      <!-- Récapitulatif -->
+      <div class="recap" id="recap">
+        <h4>📋 Récapitulatif</h4>
+        <p>Type: <span id="recapType">Dîmes</span></p>
+        <p>Montant: <span id="recapMontant">-</span> FCFA</p>
+        <p>Méthode: <span id="recapMethode">Mobile Money</span></p>
+      </div>
+
+      <button type="submit" class="btn btn-gold btn-large" style="width: 100%; margin-top: 1rem;">
+        ✅ Confirmer et Payer
+      </button>
+
+      <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+        🔒 Paiement sécurisé. Un reçu vous sera envoyé par WhatsApp.
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- Overlay de confirmation -->
+<div id="successModal" class="modal">
+  <div class="modal-content" style="text-align: center; max-width: 400px;">
+    <div style="font-size: 4rem; margin-bottom: 1rem;">🙏</div>
+    <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Merci pour votre don !</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+      Votre paiement a été enregistré.<br>
+      Un membre de l'équipe vous contactera pour confirmer la transaction.
+    </p>
+    <div style="background: var(--bg-hover); border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem; text-align: left;">
+      <p><strong>Type:</strong> <span id="successType">-</span></p>
+      <p><strong>Montant:</strong> <span id="successMontant">-</span> FCFA</p>
+      <p><strong>Méthode:</strong> <span id="successMethode">-</span></p>
+    </div>
+    <button class="btn btn-gold" onclick="closeSuccessModal()" style="width: 100%;">
+      Fermer
+    </button>
+  </div>
+</div>
+
+<script>
+  // Slider automatique
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+
+  // Modal functions
+  function openPaymentModal() {
+    document.getElementById('paymentModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    updateRecap();
+  }
+
+  function closePaymentModal() {
+    document.getElementById('paymentModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  function closeSuccessModal() {
+    document.getElementById('successModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Set quick amount
+  function setAmount(amount) {
+    document.getElementById('montant').value = amount;
+    updateRecap();
+  }
+
+  // Update recap
+  function updateRecap() {
+    const typeMap = {
+      'dime': 'Dîmes (10%)',
+      'offrande': 'Offrande',
+      'actionGrace': 'Action de Grâce',
+      'projet': 'Projet Spécial'
+    };
+    const methodeMap = {
+      'momo': 'Mobile Money (MTN)',
+      'om': 'Orange Money'
+    };
+    
+    const type = document.querySelector('input[name="typeDon"]:checked')?.value || 'dime';
+    const montant = document.getElementById('montant')?.value || '-';
+    const methode = document.querySelector('input[name="methode"]:checked')?.value || 'momo';
+    
+    document.getElementById('recapType').textContent = typeMap[type];
+    document.getElementById('recapMontant').textContent = montant;
+    document.getElementById('recapMethode').textContent = methodeMap[methode];
+  }
+
+  // Handle payment submission
+  function handlePayment(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
+    // Update success modal
+    const typeMap = {
+      'dime': 'Dîmes',
+      'offrande': 'Offrande',
+      'actionGrace': 'Action de Grâce',
+      'projet': 'Projet Spécial'
+    };
+    const methodeMap = {
+      'momo': 'Mobile Money',
+      'om': 'Orange Money'
+    };
+    
+    document.getElementById('successType').textContent = typeMap[data.typeDon];
+    document.getElementById('successMontant').textContent = data.montant;
+    document.getElementById('successMethode').textContent = methodeMap[data.methode];
+    
+    // Close payment modal and show success
+    closePaymentModal();
+    document.getElementById('successModal').classList.add('active');
+    
+    // Reset form
+    e.target.reset();
+    
+    // Ici vous pouvez ajouter l'envoi des données à votre backend
+    console.log('Don reçu:', data);
+    // fetch('votre-api.php', { method: 'POST', body: formData });
+  }
+
+  // Update recap on change
+  document.querySelectorAll('input[name="typeDon"], input[name="methode"], #montant').forEach(el => {
+    el.addEventListener('change', updateRecap);
+    el.addEventListener('input', updateRecap);
+  });
+
+  // Close modal on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closePaymentModal();
+      closeSuccessModal();
+    }
+  });
+
+  // Close modal on overlay click
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  });
+</script>
 
 </body>
-</html>
+  </html>
