@@ -181,12 +181,12 @@
     </div>
   </div>
 
-  <!-- PAIEMENT MOBILE MONEY -->
+  <!-- PAIEMENT MOBILE MONEY — MONTANT 100% LIBRE -->
   <div class="card payment-section" id="don">
     <h2>💰 Dîmes | Offrandes | Actions de Grâces</h2>
     <p style="color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem; font-size:0.9rem;">
       Soutenez l'œuvre de Dieu à Mercy Seat Parish.<br>
-      Choisissez votre opérateur et suivez les instructions.
+      Entrez le montant de votre choix et suivez les instructions.
     </p>
 
     <div class="payment-tabs">
@@ -196,114 +196,136 @@
 
     <!-- MTN PANEL -->
     <div class="payment-panel active" id="panel-mtn">
-      <div class="ussd-display">
-        <div class="ussd-label">Code USSD MTN</div>
-        <div class="ussd-code">*126*1*671246233#</div>
+      <!-- TYPE DE DON -->
+      <div class="donation-types-inline" style="margin-bottom:1rem;">
+        <label>
+          <input type="radio" name="typeDonMtn" value="dime" checked onchange="updateUssdCode('mtn')">
+          <span>📖 Dîmes</span>
+        </label>
+        <label>
+          <input type="radio" name="typeDonMtn" value="offrande" onchange="updateUssdCode('mtn')">
+          <span>🎁 Offrande</span>
+        </label>
+        <label>
+          <input type="radio" name="typeDonMtn" value="actionGrace" onchange="updateUssdCode('mtn')">
+          <span>🙏 Action de Grâce</span>
+        </label>
+        <label>
+          <input type="radio" name="typeDonMtn" value="projet" onchange="updateUssdCode('mtn')">
+          <span>🏗️ Projet</span>
+        </label>
+      </div>
+
+      <!-- MONTANT 100% LIBRE -->
+      <div class="amount-free-input" style="margin-bottom:1.5rem;">
+        <label style="display:block; color:var(--text-primary); font-weight:600; margin-bottom:0.5rem; font-size:0.95rem;">
+          💵 Quel montant voulez-vous donner ? (FCFA)
+        </label>
+        <div style="position:relative;">
+          <input type="number" id="montantMtn" placeholder="Tapez votre montant ici..." min="100"
+            style="width:100%; background:var(--bg-hover); border:2px solid var(--border); border-radius:12px; padding:1.2rem 1rem; color:var(--text-primary); font-size:1.2rem; font-weight:700; transition:var(--transition); text-align:center;"
+            oninput="updateUssdCode('mtn')" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border)'">
+          <span style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); color:var(--accent-gold); font-weight:700; font-size:1rem;">FCFA</span>
+        </div>
+        <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.5rem; text-align:center;">
+          ✨ Donnez selon votre cœur. Aucun montant imposé.
+        </p>
+      </div>
+
+      <!-- CODE USSD DYNAMIQUE -->
+      <div class="ussd-display" id="ussdDisplayMtn">
+        <div class="ussd-label">Votre code USSD MTN</div>
+        <div class="ussd-code" id="ussdCodeMtn">*126*1*6 71 24 62 33#</div>
         <div class="ussd-desc">Tapez ce code sur votre téléphone</div>
       </div>
 
       <div class="ussd-steps">
         <h4>📋 Comment payer avec MTN MoMo</h4>
         <ol>
-          <li>Tapez <strong>*126*1*671246233#</strong> sur votre téléphone</li>
+          <li>Entrez votre <strong>montant</strong> dans le champ ci-dessus</li>
+          <li>Le <strong>code USSD</strong> se génère automatiquement</li>
+          <li>Copiez-le et collez dans votre <strong>composeur téléphonique</strong></li>
           <li>Entrez votre <strong>code secret MTN MoMo</strong></li>
-          <li>Saisissez le <strong>montant</strong> de votre don</li>
           <li>Confirmez la transaction</li>
           <li>Vous recevrez un <strong>SMS de confirmation</strong></li>
         </ol>
       </div>
 
-      <div class="donation-types-inline">
-        <label>
-          <input type="radio" name="typeDonMtn" value="dime" checked>
-          <span>📖 Dîmes</span>
-        </label>
-        <label>
-          <input type="radio" name="typeDonMtn" value="offrande">
-          <span>🎁 Offrande</span>
-        </label>
-        <label>
-          <input type="radio" name="typeDonMtn" value="actionGrace">
-          <span>🙏 Action de Grâce</span>
-        </label>
-        <label>
-          <input type="radio" name="typeDonMtn" value="projet">
-          <span>🏗️ Projet</span>
-        </label>
-      </div>
-
-      <div class="donation-amounts">
-        <button type="button" class="amount-btn" onclick="copyUssd('*126*1*671246233*1000#')">1 000</button>
-        <button type="button" class="amount-btn" onclick="copyUssd('*126*1*671246233*5000#')">5 000</button>
-        <button type="button" class="amount-btn" onclick="copyUssd('*126*1*671246233*10000#')">10 000</button>
-        <button type="button" class="amount-btn" onclick="copyUssd('*126*1*671246233*50000#')">50 000</button>
-      </div>
-
-      <button class="confirm-btn" onclick="copyUssd('*126*1*671246233#')">
+      <button class="confirm-btn" id="copyBtnMtn" onclick="copyUssd('mtn')">
         📋 Copier le code USSD
       </button>
 
       <p class="payment-note">
-        💡 Le numéro de réception est <strong>690 45 97 12</strong> (MTN)<br>
-        Après paiement, envoyez le reçu par <a href="https://wa.me/237671246233" style="color:var(--accent-green);">WhatsApp</a>
+        💡 Le numéro de réception est <strong>671 24 62 33</strong> (MTN)<br>
+        Après paiement, envoyez le reçu par <a href="https://wa.me/237671 24 62 33" style="color:var(--accent-green);">WhatsApp</a>
       </p>
     </div>
 
     <!-- ORANGE PANEL -->
     <div class="payment-panel" id="panel-orange">
-      <div class="ussd-display">
-        <div class="ussd-label">Code USSD Orange</div>
-        <div class="ussd-code">*150*1*671246233#</div>
+      <!-- TYPE DE DON -->
+      <div class="donation-types-inline" style="margin-bottom:1rem;">
+        <label>
+          <input type="radio" name="typeDonOrange" value="dime" checked onchange="updateUssdCode('orange')">
+          <span>📖 Dîmes</span>
+        </label>
+        <label>
+          <input type="radio" name="typeDonOrange" value="offrande" onchange="updateUssdCode('orange')">
+          <span>🎁 Offrande</span>
+        </label>
+        <label>
+          <input type="radio" name="typeDonOrange" value="actionGrace" onchange="updateUssdCode('orange')">
+          <span>🙏 Action de Grâce</span>
+        </label>
+        <label>
+          <input type="radio" name="typeDonOrange" value="projet" onchange="updateUssdCode('orange')">
+          <span>🏗️ Projet</span>
+        </label>
+      </div>
+
+      <!-- MONTANT 100% LIBRE -->
+      <div class="amount-free-input" style="margin-bottom:1.5rem;">
+        <label style="display:block; color:var(--text-primary); font-weight:600; margin-bottom:0.5rem; font-size:0.95rem;">
+          💵 Quel montant voulez-vous donner ? (FCFA)
+        </label>
+        <div style="position:relative;">
+          <input type="number" id="montantOrange" placeholder="Tapez votre montant ici..." min="100"
+            style="width:100%; background:var(--bg-hover); border:2px solid var(--border); border-radius:12px; padding:1.2rem 1rem; color:var(--text-primary); font-size:1.2rem; font-weight:700; transition:var(--transition); text-align:center;"
+            oninput="updateUssdCode('orange')" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border)'">
+          <span style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); color:var(--accent-gold); font-weight:700; font-size:1rem;">FCFA</span>
+        </div>
+        <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.5rem; text-align:center;">
+          ✨ Donnez selon votre cœur. Aucun montant imposé.
+        </p>
+      </div>
+
+      <!-- CODE USSD DYNAMIQUE -->
+      <div class="ussd-display" id="ussdDisplayOrange">
+        <div class="ussd-label">Votre code USSD Orange</div>
+        <div class="ussd-code" id="ussdCodeOrange">#150*1*6 98 74 06 61#</div>
         <div class="ussd-desc">Tapez ce code sur votre téléphone</div>
+        <div class="ussd-desc">Le nom du beneficier(e): EBANJE MUKETE NESTOR<div>
       </div>
 
       <div class="ussd-steps">
         <h4>📋 Comment payer avec Orange Money</h4>
         <ol>
-          <li>Tapez <strong>*150*1*671246233#</strong> sur votre téléphone</li>
+          <li>Entrez votre <strong>montant</strong> dans le champ ci-dessus</li>
+          <li>Le <strong>code USSD</strong> se génère automatiquement</li>
+          <li>Copiez-le et collez dans votre <strong>composeur téléphonique</strong></li>
           <li>Entrez votre <strong>code secret Orange Money</strong></li>
-          <li>Saisissez le <strong>montant</strong> de votre don</li>
           <li>Confirmez la transaction</li>
           <li>Vous recevrez un <strong>SMS de confirmation</strong></li>
         </ol>
       </div>
 
-      <div class="donation-types-inline">
-        <label>
-          <input type="radio" name="typeDonOrange" value="dime" checked>
-          <span>📖 Dîmes</span>
-        </label>
-        <label>
-          <input type="radio" name="typeDonOrange" value="offrande">
-          <span>🎁 Offrande</span>
-        </label>
-        <label>
-          <input type="radio" name="typeDonOrange" value="actionGrace">
-          <span>🙏 Action de Grâce</span>
-        </label>
-        <label>
-          <input type="radio" name="typeDonOrange" value="projet">
-          <span>🏗️ Projet</span>
-        </label>
-      </div>
-
-      <div class="donation-amounts">
-        <button type="button" class="amount-btn" onclick="copyUssd('#150*1*671246233*100#')">100</button>
-        <button type="button" class="amount-btn" onclick="copyUssd('#150*1*671246233*200#')">200</button>
-        <button type="button" class="amount-btn" onclick="copyUssd('#150*1*671246233#')"></button>
-        <button type="button" class="amount-btn" onclick="copyUssd('#150*1*671246233*1000#')">1 000</button>
-        <button type="button" class="amount-btn" onclick="copyUssd('#150*1*671246233*5000#')">5 000</button>
-        <button type="button" class="amount-btn" onclick="copyUssd('#150*1*671246233*10000#')">10 000</button>
-        <button type="button" class="amount-btn" onclick="copyUssd('#150*1*671246233*50000#')">50 000</button>
-      </div>
-
-      <button class="confirm-btn" onclick="copyUssd('*150*1*671246233#')">
+      <button class="confirm-btn" id="copyBtnOrange" onclick="copyUssd('orange')">
         📋 Copier le code USSD
       </button>
 
       <p class="payment-note">
-        💡 Le numéro de réception est <strong>671246233</strong> (Orange)<br>
-        Après paiement, envoyez le reçu par <a href="https://wa.me/237671246233" style="color:var(--accent-green);">WhatsApp</a>
+        💡 Le numéro de réception est <strong>671 24 62 33</strong> (Orange)<br>
+        Après paiement, envoyez le reçu par <a href="https://wa.me/237671 24 62 33" style="color:var(--accent-green);">WhatsApp</a>
       </p>
     </div>
 
@@ -333,7 +355,7 @@
   <a href="https://www.youtube.com/@Rccgmspnkomo" target="_blank" class="btn btn-gold" style="margin-top:0.5rem;">▶️ Notre Chaîne YouTube</a>
 </footer>
 
-<a href="https://wa.me/237671246233#" class="whatsapp" target="_blank">💬 WhatsApp</a>
+<a href="https://wa.me/237671246233" class="whatsapp" target="_blank">💬 WhatsApp</a>
 
 <!-- ============================================
      LIGHTBOX / MODAL DE CONTENU EN PLEIN ÉCRAN
@@ -428,13 +450,13 @@
 
       <div style="padding:0 2rem; margin-top:1rem;">
         <label style="display:block; color:var(--text-primary); font-weight:600; margin-bottom:0.5rem;">Votre nom complet</label>
-        <input type="text" id="nomDonateur" name="nomDonateur" placeholder="Ex: Jean Dupont" required
+        <input type="text" id="nomDonateur" name="nomDonateur" placeholder="Ex: Ebanje mukete" required
           style="width:100%; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; padding:0.9rem 1rem; color:var(--text-primary); font-size:1rem; margin-bottom:1rem;">
       </div>
 
       <div style="padding:0 2rem;">
         <label style="display:block; color:var(--text-primary); font-weight:600; margin-bottom:0.5rem;">Numéro de téléphone</label>
-        <input type="tel" id="telephone" name="telephone" placeholder="Ex: 690 45 97 12" required
+        <input type="tel" id="telephone" name="telephone" placeholder="Ex: 6XX XXX XXX" required
           style="width:100%; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; padding:0.9rem 1rem; color:var(--text-primary); font-size:1rem; margin-bottom:1rem;">
       </div>
 
@@ -618,7 +640,7 @@ function navigateLightbox(direction) {
 }
 
 // ============================================
-// PAIEMENT MOBILE MONEY — TABS & USSD
+// PAIEMENT MOBILE MONEY — MONTANT 100% LIBRE
 // ============================================
 
 function switchPayment(operator) {
@@ -629,20 +651,67 @@ function switchPayment(operator) {
   document.getElementById('panel-' + operator).classList.add('active');
 }
 
-function copyUssd(code) {
+function updateUssdCode(operator) {
+  const input = document.getElementById('montant' + operator.charAt(0).toUpperCase() + operator.slice(1));
+  const montant = input.value;
+  const display = document.getElementById('ussdCode' + operator.charAt(0).toUpperCase() + operator.slice(1));
+  const btn = document.getElementById('copyBtn' + operator.charAt(0).toUpperCase() + operator.slice(1));
+
+  let code = '';
+  if (operator === 'mtn') {
+    code = montant ? '*126*1*690459712*' + montant + '#' : '*126*1*690459712#';
+  } else {
+    code = montant ? '*150*1*690459712*' + montant + '#' : '*150*1*690459712#';
+  }
+
+  display.textContent = code;
+
+  // Animation du code
+  display.style.animation = 'none';
+  display.offsetHeight;
+  display.style.animation = 'pulseGold 0.5s ease';
+
+  // Mettre à jour le bouton
+  if (montant && montant >= 100) {
+    btn.innerHTML = '📋 Copier : ' + parseInt(montant).toLocaleString('fr-FR') + ' FCFA';
+    btn.style.background = 'linear-gradient(135deg, var(--accent-gold), #d97706)';
+  } else {
+    btn.innerHTML = '📋 Copier le code USSD';
+    btn.style.background = 'linear-gradient(135deg, var(--accent-green), #059669)';
+  }
+}
+
+function copyUssd(operator) {
+  const displayId = 'ussdCode' + operator.charAt(0).toUpperCase() + operator.slice(1);
+  const code = document.getElementById(displayId).textContent;
+  const montant = document.getElementById('montant' + operator.charAt(0).toUpperCase() + operator.slice(1)).value;
+
   navigator.clipboard.writeText(code).then(() => {
-    alert('✅ Code USSD copié : ' + code + '\n\nCollez-le dans votre composeur téléphonique !');
+    const msg = montant 
+      ? '✅ Code copié !\n\n' + code + '\n\nMontant: ' + parseInt(montant).toLocaleString('fr-FR') + ' FCFA\n\nCollez ce code dans votre composeur téléphonique et validez.'
+      : '✅ Code copié : ' + code + '\n\n⚠️ N'oubliez pas d'entrer votre montant avant de valider !';
+    alert(msg);
   }).catch(() => {
-    // Fallback pour les anciens navigateurs
     const textarea = document.createElement('textarea');
     textarea.value = code;
     document.body.appendChild(textarea);
     textarea.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
-    alert('✅ Code USSD copié : ' + code + '\n\nCollez-le dans votre composeur téléphonique !');
+    alert('✅ Code copié dans le presse-papiers !');
   });
 }
+
+// Ajouter l'animation CSS dynamiquement
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes pulseGold {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); color: #fff; }
+    100% { transform: scale(1); }
+  }
+`;
+document.head.appendChild(style);
 
 // ============================================
 // MODAL DE PAIEMENT (ORIGINAL)
