@@ -9,6 +9,7 @@
 <link rel="icon" type="image/png" href="img/images.png">
 <link rel="stylesheet" href="style.css">
 <base target="_blank">
+<base target="_blank">
 </head>
 
 <body>
@@ -103,11 +104,18 @@
       Abonnez-vous à notre chaîne pour les dernières prédications et cultes en direct.
     </p>
     <div class="youtube-grid">
+      <!-- 🔴 CULTE EN DIRECT — Live Stream -->
       <div class="youtube-card">
         <div class="video-wrapper">
           <div class="video-overlay" onclick="openIframeLightbox(this)"></div>
-          <iframe src="https://www.youtube.com/@Rccgnkomomsp" 
-            height="200" allowfullscreen loading="lazy" title="Culte en Direct"></iframe>
+          <iframe 
+            src="https://www.youtube.com/embed/live_stream?channel=UCXXXXXXXXXXXX" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy" 
+            title="Culte en Direct LIVE"
+            style="width:100%; height:200px; border:none;">
+          </iframe>
         </div>
         <div class="youtube-info">
           <span class="youtube-badge">🔴 LIVE</span>
@@ -115,11 +123,18 @@
           <p>Rejoignez-nous en direct chaque dimanche</p>
         </div>
       </div>
+      <!-- 📹 REPLAYS — Dernières vidéos uploadées -->
       <div class="youtube-card">
         <div class="video-wrapper">
           <div class="video-overlay" onclick="openIframeLightbox(this)"></div>
-          <iframe src="https://www.youtube.com/@Rccgnkomomsp" 
-            height="200" allowfullscreen loading="lazy" title="Dernières Prédications"></iframe>
+          <iframe 
+            src="https://www.youtube.com/embed?listType=playlist&list=UUXXXXXXXXXXXX" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy" 
+            title="Dernières Prédications"
+            style="width:100%; height:200px; border:none;">
+          </iframe>
         </div>
         <div class="youtube-info">
           <span class="youtube-badge" style="background:var(--accent-blue);">📹 REPLAY</span>
@@ -129,7 +144,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top:1rem;">
-      <a href="https://www.youtube.com/@Rccgmspnkomo" target="_blank" class="btn btn-gold">
+      <a href="https://www.youtube.com/@Rccgnkomomsp" target="_blank" class="btn btn-gold">
         ▶️ Visiter notre chaîne @Rccgnkomomsp
       </a>
     </div>
@@ -777,4 +792,4 @@ document.getElementById('lightbox').addEventListener('click', (e) => {
 </script>
 
 </body>
-</html>
+</html
