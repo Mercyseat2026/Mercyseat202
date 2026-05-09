@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="style.css">
 <base target="_blank">
 <base target="_blank">
+<base target="_blank">
 </head>
 
 <body>
@@ -97,30 +98,31 @@
     </div>
   </div>
 
-  <!-- YOUTUBE — SECTION COMPLÈTE -->
+  <!-- YOUTUBE / FACEBOOK — SECTION COMPLÈTE -->
   <div class="card youtube-section" id="youtube">
-    <h2>📺 Chaîne YouTube — @Rccgnkomomsp</h2>
+    <h2>📺 Nos Diffusions</h2>
     <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size:0.9rem;">
-      Abonnez-vous à notre chaîne pour les dernières prédications et cultes en direct.
+      Rejoignez nos cultes en direct et retrouvez toutes nos prédications.
     </p>
     <div class="youtube-grid">
-      <!-- 🔴 CULTE EN DIRECT — Live Stream -->
-      <div class="youtube-card">
-        <div class="video-wrapper">
-          <div class="video-overlay" onclick="openIframeLightbox(this)"></div>
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UCXHcQ91ynVb-ai--dEX3bkQ" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen 
-            loading="lazy" 
-            title="Culte en Direct LIVE"
-            style="width:100%; height:200px; border:none;">
-          </iframe>
+      <!-- 🔴 CULTE EN DIRECT — Facebook Live intégré -->
+      <div class="youtube-card" style="background: linear-gradient(135deg, rgba(24,119,242,0.1), rgba(13,92,182,0.05)); border-color: rgba(24,119,242,0.3);">
+        <div class="video-wrapper" style="min-height: 200px; display: flex; align-items: center; justify-content: center; background: var(--bg-hover);">
+          <div style="text-align: center; padding: 1.5rem;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📘</div>
+            <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Culte en Direct</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+              Suivez notre culte en direct<br>sur Facebook
+            </p>
+            <a href="https://www.facebook.com/RCCGMercySeatNkomo/live" target="_blank" class="btn" style="background: linear-gradient(135deg, #1877f2, #0d5cb6); box-shadow: 0 4px 15px rgba(24,119,242,0.3);">
+              ▶️ VOIR LE LIVE
+            </a>
+          </div>
         </div>
-        <div class="youtube-info">
-          <span class="youtube-badge">🔴 LIVE</span>
-          <h3>Culte en Direct</h3>
-          <p>Rejoignez-nous en direct chaque dimanche</p>
+        <div class="youtube-info" style="border-top: 1px solid rgba(24,119,242,0.2);">
+          <span class="youtube-badge" style="background: #1877f2;">🔴 LIVE</span>
+          <h3>Facebook Live</h3>
+          <p>Culte en direct chaque dimanche</p>
         </div>
       </div>
       <!-- 📹 REPLAYS — Dernières vidéos uploadées -->
@@ -128,7 +130,7 @@
         <div class="video-wrapper">
           <div class="video-overlay" onclick="openIframeLightbox(this)"></div>
           <iframe 
-            src="https://www.youtube.com/embed?listType=playlist&list="UUXHcQ91ynVb-ai--dEX3bkQ"
+            src="https://www.youtube.com/embed?listType=playlist&list=UUXHcQ91ynVb-ai--dEX3bkQ"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen 
             loading="lazy" 
@@ -144,11 +146,15 @@
       </div>
     </div>
     <div style="text-align:center; margin-top:1rem;">
-      <a href="https://www.youtube.com/@Rccgnkomomsp" target="_blank" class="btn btn-gold">
-        ▶️ Visiter notre chaîne @Rccgnkomomsp
+      <a href="https://www.youtube.com/@Rccgnkomomsp" target="_blank" class="btn btn-gold" style="margin-right: 0.5rem;">
+        ▶️ YouTube
+      </a>
+      <a href="https://www.facebook.com/RCCGMercySeatNkomo" target="_blank" class="btn" style="background: linear-gradient(135deg, #1877f2, #0d5cb6);">
+        📘 Facebook
       </a>
     </div>
   </div>
+
 
   <!-- GALERIE -->
   <div class="card section-compact" id="galerie">
@@ -174,11 +180,19 @@
         "Confessez vos péchés les uns aux autres, et priez les uns pour les autres, afin que vous soyez guéris."
       </div>
 
-      <form action="https://formsubmit.co/rccgnkomomsp@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="🙏 Nouvelle demande de prière — Mercy Seat Parish">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://mercyseat202.vercel.app">
+      <form action="https://api.web3forms.com/submit" method="POST" id="prayerForm">
+        <!-- Clé d'accès Web3Forms — REMPLACEZ PAR VOTRE CLÉ -->
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+        <!-- Protection anti-spam (honeypot) -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <!-- Email de destination -->
+        <input type="hidden" name="from_name" value="Mercy Seat Parish">
+        <input type="hidden" name="subject" value="🙏 Nouvelle demande de prière — Mercy Seat Parish">
+
+        <!-- Redirection après envoi -->
+        <input type="hidden" name="redirect" value="https://mercyseat202.vercel.app">
 
         <div class="form-row">
           <input type="text" name="nom" placeholder="Votre nom complet" required>
@@ -187,7 +201,14 @@
         <input type="email" name="email" placeholder="Votre adresse email" required>
         <textarea name="priere" placeholder="Écrivez votre prière ici... Partagez votre besoin, votre témoignage ou votre demande. Nous intercéderons pour vous." required></textarea>
 
-        <button type="submit" class="submit-btn">📨 Envoyer ma prière</button>
+        <button type="submit" class="submit-btn" id="prayerSubmitBtn">📨 Envoyer ma prière</button>
+
+        <!-- Message de confirmation -->
+        <div id="prayerSuccess" style="display:none; text-align:center; padding:1rem; background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.3); border-radius:12px; margin-top:1rem;">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
+          <p style="color:var(--accent-green); font-weight:700; margin:0;">Votre prière a été envoyée !</p>
+          <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.3rem;">Notre équipe de prière lira votre demande.</p>
+        </div>
 
         <p class="privacy-note">
           🔒 Votre demande est confidentielle. Notre équipe de prière lira et intercédera pour vous.
@@ -317,9 +338,9 @@
           💵 Quel montant voulez-vous donner ? (FCFA)
         </label>
         <div style="position:relative;">
-          <input type="number" id="montantMtn" placeholder="Tapez votre montant ici..." min="100"
+          <input type="number" id="montantOrange" placeholder="Tapez votre montant ici..." min="100"
             style="width:100%; background:var(--bg-hover); border:2px solid var(--border); border-radius:12px; padding:1.2rem 1rem; color:var(--text-primary); font-size:1.2rem; font-weight:700; transition:var(--transition); text-align:center;"
-            oninput="updateUssdCode('mtn')" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border)'">
+            oninput="updateUssdCode('orange')" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border)'">
           <span style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); color:var(--accent-gold); font-weight:700; font-size:1rem;">FCFA</span>
         </div>
         <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.5rem; text-align:center;">
@@ -360,7 +381,7 @@
   <p>✉️ rccgnkomomsp@gmail.com</p>
   <p>📘 <a href="https://facebook.com/RCCGMercySeatNkomo">RCCG Mercy Seat Nkomo</a></p>
   <p>📺 <a href="https://www.youtube.com/@Rccgmspnkomo" target="_blank">@Rccgnkomomsp sur YouTube</a></p>
-  <a href="https://www.youtube.com/embed/live_stream?channel=UCXHcQ91ynVb-ai--dEX3bkQ" target="_blank" class="btn btn-gold" style="margin-top:0.5rem;">▶️ Notre Chaîne YouTube</a>
+  <a href="https://www.youtube.com/@Rccgnkomomsp" target="_blank" class="btn btn-gold" style="margin-top:0.5rem;">▶️ Notre Chaîne YouTube</a>
 </footer>
 
 <a href="https://wa.me/237671246233#" class="whatsapp" target="_blank">💬 WhatsApp</a>
@@ -789,6 +810,40 @@ document.getElementById('lightbox').addEventListener('click', (e) => {
     closeLightbox();
   }
 });
+
+// ============================================
+// FORMULAIRE DE PRIÈRE — Web3Forms
+// ============================================
+const prayerForm = document.getElementById('prayerForm');
+if (prayerForm) {
+  prayerForm.addEventListener('submit', function(e) {
+    const btn = document.getElementById('prayerSubmitBtn');
+    const originalText = btn.innerHTML;
+
+    // Désactiver le bouton pendant l'envoi
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Envoi en cours...';
+    btn.style.opacity = '0.7';
+
+    // Laisser le formulaire se soumettre normalement à Web3Forms
+    // Le message de succès s'affichera après redirection ou on peut l'afficher ici
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }, 3000);
+  });
+}
+
+// Afficher le message de succès si on revient de la redirection
+if (window.location.search.includes('success=true') || document.referrer.includes('web3forms')) {
+  const successDiv = document.getElementById('prayerSuccess');
+  if (successDiv) {
+    successDiv.style.display = 'block';
+    // Scroll vers le formulaire
+    document.getElementById('priere').scrollIntoView({ behavior: 'smooth' });
+  }
+}
 </script>
 
 </body>
